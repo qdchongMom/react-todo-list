@@ -4,7 +4,7 @@ import { v4 as uuidv4 } from "uuid"; // 1. import the UUID
 import "./TodoList.css";
 
 const TodoListHook = (props) => {
-  const [title, setTitle] = useState("");
+  // const [title, setTitle] = useState("");
   const [newItemName, setNewItemName] = useState("");
   const [todos, setTodos] = useState([
     {
@@ -25,7 +25,7 @@ const TodoListHook = (props) => {
         (todoToFilter) => todoToFilter.id === todo.id
       )[0];
       currentTodo.isDone = isDone;
-      setTodos({ todos: [...todos] });
+      setTodos([...todos]);
     };
   };
 
@@ -34,7 +34,7 @@ const TodoListHook = (props) => {
       const todosWithoutItem = todos.filter(
         (todoToFilter) => todoToFilter.id !== todo.id
       );
-      setTodos({ todos: [...todosWithoutItem] });
+      setTodos([...todosWithoutItem]);
     };
   };
   const displayTodos = () => {
@@ -56,8 +56,8 @@ const TodoListHook = (props) => {
   };
 
   const addNewTodo = () => {
-    console.log(newItemName);
-    if (newItemName || !newItemName.length) {
+    //console.log(newItemName);
+    if (!newItemName || !newItemName.length) {
       return;
     }
 
@@ -69,7 +69,7 @@ const TodoListHook = (props) => {
         isDone: false,
       },
     ]);
-    console.log(todos);
+
     setNewItemName("");
   };
 

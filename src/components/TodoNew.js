@@ -35,15 +35,18 @@ const TodoNew = () => {
   };
 
   return (
-    <div>
+    <div data-testid="TodoNew">
       <div className="todoList__add_box">
         <input
+          data-testid="input"
           type="text"
           value={newTitle}
           onChange={handleChange}
           placeholder="Input new title"
         />
-        <button onClick={addNewTodoList}>add</button>
+        <button onClick={addNewTodoList} data-testid="button-add-todo">
+          add
+        </button>
       </div>
       <div>{displayAllTodoList()}</div>
     </div>
