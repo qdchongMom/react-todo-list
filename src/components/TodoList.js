@@ -6,7 +6,7 @@ class TodoList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      title: props.title,
+      title: "",
       todos: [
         {
           id: uuidv4(), // 2. add uuid to the item
@@ -68,18 +68,24 @@ class TodoList extends React.Component {
     if (!name || !name.length) {
       return;
     }
-    return (
-      <div>
-        {" "}
-        <TodoList title="Title from App" />
-      </div>
-    );
+
+    this.setState({
+      newItemName: "",
+      todos: [
+        ...this.state.todos,
+        {
+          id: uuidv4(),
+          name: name,
+          isDone: false,
+        },
+      ],
+    });
   }
 
   render() {
     return (
       <div className="todo__container">
-        <div className="todo__header">{this.state.title}</div>
+        <div className="todo__header">{this.props.title}</div>
         <br></br>
         <input
           type="text"

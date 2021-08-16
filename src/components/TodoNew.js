@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import TodoList from "./TodoList";
 import { v4 as uuidv4 } from "uuid"; // 1. import the UUID
 import "./TodoNew.css";
+import TodoListHook from "./TodoListHook";
 
 const TodoNew = () => {
   const [todoList, setTodoList] = useState([]);
@@ -29,7 +30,7 @@ const TodoNew = () => {
 
   const displayAllTodoList = () => {
     return todoList.map((todoList) => {
-      return <TodoList title={todoList.title} />;
+      return <TodoListHook title={todoList.title} />;
     });
   };
 
