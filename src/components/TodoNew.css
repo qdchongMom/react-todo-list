@@ -1,0 +1,12 @@
+.todoList__add_box {
+  display: flex;
+  align-self: center;
+  margin-left: auto;
+  margin-right: auto;
+  /* justify-content: center; */
+  border: 4px;
+  border-style: solid;
+  flex-direction: column;
+  margin-bottom: 10px;
+  max-width: 300px;
+}
