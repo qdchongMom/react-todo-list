@@ -4,7 +4,6 @@ import { v4 as uuidv4 } from "uuid"; // 1. import the UUID
 import "./TodoList.css";
 
 const TodoListHook = (props) => {
-  // const [title, setTitle] = useState("");
   const [newItemName, setNewItemName] = useState("");
   const [todos, setTodos] = useState([
     {
